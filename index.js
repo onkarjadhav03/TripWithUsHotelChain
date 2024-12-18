@@ -302,7 +302,7 @@ app.get('/hotels/filter/category', (req, res) => {
 
 //Endpoint 7: Send all hotels
 app.get('/hotels', (req, res) => {
-  res.json(hotels);
+  res.json({hotels:hotels});
 });
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
