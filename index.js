@@ -227,7 +227,7 @@ app.get('/hotels/sort/pricing', (req, res) => {
   } else {
     copyHotels.sort(highToLow);
   }
-  res.json(copyHotels);
+  res.json({hotels:copyHotels});
 });
 
 //function to sorted based on their Ratings
