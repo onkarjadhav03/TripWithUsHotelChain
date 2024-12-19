@@ -239,7 +239,7 @@ function rating(hotel1, hotel2) {
 app.get('/hotels/sort/rating', (req, res) => {
   let copyHotels = hotels.slice();
   copyHotels.sort(rating);
-  res.json(copyHotels);
+  res.json({hotels:copyHotels});
 });
 
 //function to sorted by pricing least-to-most
