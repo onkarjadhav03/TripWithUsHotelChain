@@ -261,7 +261,7 @@ app.get('/hotels/sort/reviews', (req, res) => {
   } else {
     copyHotels.sort(mostToLeast);
   }
-  res.json(copyHotels);
+  res.json({hotels:copyHotels});
 });
 
 //function to Filter the hotels based on the Hotel Amenity
@@ -273,7 +273,7 @@ function filterByAmenity(hotel, amenity) {
 app.get('/hotels/filter/amenity', (req, res) => {
   let amenity = req.query.amenity;
   let result = hotels.filter((hotel) => filterByAmenity(hotel, amenity));
-  res.json(result);
+  res.json({ hotels: result });
 });
 
 //function to Filter the hotels based on the selected Country
@@ -285,7 +285,7 @@ function filterByCountry(hotel, country) {
 app.get('/hotels/filter/country', (req, res) => {
   let country = req.query.country;
   let result = hotels.filter((hotel) => filterByCountry(hotel, country));
-  res.json(result);
+  res.json({ hotels: result });
 });
 
 //function to Filter the hotels based on the selected  Category
@@ -297,7 +297,7 @@ function filterByCategory(hotel, category) {
 app.get('/hotels/filter/category', (req, res) => {
   let category = req.query.category;
   let result = hotels.filter((hotel) => filterByCategory(hotel, category));
-  res.json(result);
+  res.json({ hotels: result });
 });
 
 //Endpoint 7: Send all hotels
